@@ -1,0 +1,1 @@
+This repo contains translation efforts for Zoids: Full Metal Crash. You will not find any distribution of the game itself or any of the text, translated or otherwise within this repo. It is purely for tools only.
