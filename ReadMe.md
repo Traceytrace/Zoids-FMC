@@ -62,4 +62,4 @@ Notes: The scrolling text at the start of the game is a png broken up into each 
 
 
 Todo:
-- use pyautogui [https://github.com/asweigart/pyautogui] to automate the mass build of pngs into txds
+- use pyautogui [https://github.com/asweigart/pyautogui] to automate the mass build of pngs into txds 
