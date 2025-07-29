@@ -63,3 +63,4 @@ Notes: The scrolling text at the start of the game is a png broken up into each 
 
 Todo:
 - use pyautogui [https://github.com/asweigart/pyautogui] to automate the mass build of pngs into txds 
+- somehow automate fpk unpacker from gntool (it's open source... maybe use their java functions? else maybe pyautogui again...)
