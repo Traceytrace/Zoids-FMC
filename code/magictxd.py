@@ -14,16 +14,15 @@ build_button = [1148, 681]
 def mass_build_txd(input_path_string, 
                   output_txd_folder,
                   click_build_button=False):
-    """
-    """
-    #ensure the main monitor is the active monitor
-    pyautogui.click(1, 1)
 
     #warn user to not touch the mouse while the automation runs
     root = tk.Tk()
     root.withdraw()
     messagebox.showinfo("Automation Starting", "Press OK or Enter to begin.\nPlease do not touch your mouse during the process.")
     root.destroy()
+
+    # ensure the main monitor is the active monitor
+    pyautogui.click(1, 1)
 
     # open magic txd
     subprocess.Popen(magic_txd_exe_path)
