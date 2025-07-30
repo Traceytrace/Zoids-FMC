@@ -1,11 +1,8 @@
 import subprocess
 import os
-from config import gc_fst_folder, roms_folder
+from config import gc_fst_folder, roms_folder, gc_fst_exe_path, input_iso_path, output_iso_path, root_path
 
-gc_fst_exe_path = os.path.join(gc_fst_folder, 'gc_fst.exe')
-input_iso_path = os.path.join(roms_folder, 'zoids.iso')
-output_iso_path = os.path.join(roms_folder, 'zoids_edited.iso')
-root_path = os.path.join(gc_fst_folder, 'root')
+
 
 def extract_iso(exe_path = gc_fst_exe_path, 
                 iso_path = input_iso_path,

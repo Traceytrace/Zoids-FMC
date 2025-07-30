@@ -37,4 +37,30 @@ Answer: TXDs round to a multiple of 256kb. You need the new png to be close enou
 Answer: might work, but unlikely given the need for smaller or equal file size and same amount of files. More trouble than it's worth.
 
 
+Workflow:
+folders:
+- iso_dump directory with all the original file structure. fpks are in here and are used as the base for repacking translated content.
+- directory "unpacked fpks" with original GC structure containing folders instead of fpks, those folders have same name as fpk but contain the contents of the fpks. Each "fpk folder" contains a folder "original" and "translated" which both contain the contents of the fpks but all at the root of the folder (so no "ory, story and story00_00") but one is left untouched e.g. unpacked_fpks/story/story00_00_fpk/original/bg_00.txd. pngs sit next to their associated txd files while they exist.
+- iso_dump_translated directory with original FS. this is the save location of repacked fpks and the source for builds of the test.iso
+- original.iso is an iso of the game that is unaltered
+- test.iso is the built iso containing edited (translated) content
+
+Ideal world:
+1. window pops up with original png side by side with live edited png. there is a field to type text into the live png. (need to     build translation hub)
+    clicking a button saves the translated png and goes to next png
+
+2. magic txd builds all translated pngs into txds (pyautogui w/magic txd's mass build)
+
+3. gntool packs those into fpks (get java functions out of source code to automate this? or worst case, use pyautogui again)
+
+4. swap replace fpks in root with their translated counterparts and gc_fst builds iso.
+
+5. test in-game.
+
+
 Notes: The scrolling text at the start of the game is a png broken up into each line as if it's a piece of paper cut with scissors into strips. Can work within this, but all text is likely treated this way. Aligning to the strips will be hard.
+
+
+Todo:
+- use pyautogui [https://github.com/asweigart/pyautogui] to automate the mass build of pngs into txds 
+- somehow automate fpk unpacker from gntool (it's open source... maybe use their java functions? else maybe pyautogui again...)
