@@ -1,7 +1,6 @@
 import os
 import subprocess
-from config import fpktool_path
-fpktool_exe_path = os.path.join(fpktool_path, 'fpktool.exe')
+from config import fpktool_exe_path
 
 def unpack_fpk(exe_path = fpktool_exe_path, 
                 input_file = None,
@@ -9,7 +8,7 @@ def unpack_fpk(exe_path = fpktool_exe_path,
                 verbose=True):
     
     result = subprocess.run([exe_path, '-u', input_file, output_folder], capture_output=True, text=True, errors="ignore")
-    
+
     if verbose:
         print(result.stdout)
         print(result.stderr)
